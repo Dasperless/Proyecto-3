@@ -3,11 +3,8 @@ from tkinter import *
 class ventana_principal:
     def __init__(self,master):
         self.master = master
-        self.master.attributes("-fullscreen",True)
-
-        self.boton = Button(self.master,text = "Salir", command = lambda: self.master.destroy()).place(x = 0, y = 0)
-        
-
+        master.attributes("-fullscreen",True)
+        self.boton = Button(self.master, text = "Salir", command = lambda: self.master.destroy()).place(x=0,y=0)
 
 
 root = Tk()
