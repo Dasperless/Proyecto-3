@@ -1,16 +1,15 @@
-import pyglet
-from pyglet.window import mouse
-window = pyglet.window.Window()
-image = pyglet.resource.image('mina.png')
+from tkinter import *
 
-@window.event
-def on_draw():
-    window.clear()
-    image.blit(350, 400)
+class ventana_principal:
+    def __init__(self,master):
+        self.master = master
+        self.master.attributes("-fullscreen",True)
+
+        self.boton = Button(self.master,text = "Salir", command = lambda: self.master.destroy()).place(x = 0, y = 0)
+        
 
 
-@window.event
-def on_mouse_press(x, y, button, modifiers):
-    if button == mouse.LEFT:
-        print('The left mouse button was pressed.')
-pyglet.app.run()
+
+root = Tk()
+aplicacion = ventana_principal(root)
+root.mainloop()
